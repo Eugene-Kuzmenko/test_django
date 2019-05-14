@@ -26,4 +26,3 @@ class RecipeItemAmount(models.Model):
 
     class Meta:
         db_table = 'recipe_item_amount'
-
