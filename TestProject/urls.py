@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from test_app import viewsets as test_app_viewsets
+from test_app import (
+    viewsets as test_app_viewsets,
+    views as test_app_views
+)
 
 router = routers.SimpleRouter()
 
@@ -26,7 +29,8 @@ router.register(r'recipes', test_app_viewsets.Recipe)
 router.register(r'recipe-items', test_app_viewsets.RecipeItemAmount)
 
 urlpatterns = [
-    path('admin/', admin.site.urls)
+    path('admin/', admin.site.urls),
+    path('sort-array/', test_app_views.sort_array)
 ]
 
 urlpatterns += router.urls
