@@ -13,3 +13,13 @@ class Item(viewsets.ModelViewSet):
 class ItemType(viewsets.ModelViewSet):
     queryset = app_models.ItemType.objects.all()
     serializer_class = app_serializers.ItemType
+
+
+class RecipeItemAmount(viewsets.ModelViewSet):
+    queryset = app_models.RecipeItemAmount.objects.all()
+    serializer_class = app_serializers.RecipeItemAmount
+
+
+class Recipe(viewsets.ModelViewSet):
+    queryset = app_models.Recipe.objects.all()
+    serializer_class = app_serializers.Recipe

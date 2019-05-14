@@ -18,8 +18,12 @@ class Recipe(models.Model):
     time = models.FloatField(default=0)
 
 
-class Amount(models.Model):
+class RecipeItemAmount(models.Model):
     recipe_id = models.ForeignKey(to=Recipe, related_name='items', on_delete=models.CASCADE)
     item_id = models.ForeignKey(to=Item, on_delete=models.CASCADE)
     is_output = models.BooleanField(default=False)
+    amount = models.FloatField(default=0)
+
+    class Meta:
+        db_table = 'recipe_item_amount'
 

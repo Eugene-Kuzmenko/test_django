@@ -22,6 +22,8 @@ router = routers.SimpleRouter()
 
 router.register(r'items', test_app_viewsets.Item)
 router.register(r'types', test_app_viewsets.ItemType)
+router.register(r'recipes', test_app_viewsets.Recipe)
+router.register(r'recipe-items', test_app_viewsets.RecipeItemAmount)
 
 urlpatterns = [
     path('admin/', admin.site.urls)
