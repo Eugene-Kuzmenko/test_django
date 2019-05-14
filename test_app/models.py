@@ -1,13 +1,16 @@
 from django.db import models
 
 
-class Type(models.Model):
+class ItemType(models.Model):
     name = models.CharField(max_length=50, primary_key=True)
+
+    class Meta:
+        db_table = 'item_type'
 
 
 class Item(models.Model):
     name = models.CharField(max_length=50)
-    type = models.ForeignKey(to=Type, on_delete=models.SET_NULL, null=True)
+    type = models.ForeignKey(to=ItemType, on_delete=models.SET_NULL, null=True)
 
 
 class Recipe(models.Model):

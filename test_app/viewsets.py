@@ -9,3 +9,7 @@ class Item(viewsets.ModelViewSet):
     queryset = app_models.Item.objects.all()
     serializer_class = app_serializers.Item
 
+
+class ItemType(viewsets.ModelViewSet):
+    queryset = app_models.ItemType.objects.all()
+    serializer_class = app_serializers.ItemType
